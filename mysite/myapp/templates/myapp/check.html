@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta  http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link REL="SHORTCUT ICON" HREF="/static/favicon.ico">
+    <title> 身份验证</title>
+    <style type="text/css">
+    .kuang{
+         border-radius:5px;
+    }
+    .kuang:hover{
+        border: 1px solid #999;
+    }
+    .button{
+        border-radius:5px;
+        background:#3385ff;
+            border:2px solid #2d78f4;
+            letter-spacing:1px;
+            font-size:15px;
+            width:100px;
+            height:36px;
+            color:white;
+    }
+    .span{
+        text-align:right
+    }
+	</style>
+	<script type="text/javascript">
+	{%if fail%}
+		alert("只有管理员能更新数据，你究竟是谁？");
+		window.open('/','_self');
+	{%endif%}
+	</script>
+	
+</head>
+<body>
+    <form method="post" action=".">
+    
+    昵称：<input class="kuang" name="username" type="text" /><br/>
+    密码：<input class="kuang" name="password" type="text" /><br/>
+    
+    <input class="button" type="submit" value="确定" />
+    </form>
+    <blockquote> &nbsp;&nbsp;&nbsp;&nbsp;帕西轻轻投入白卡，一瞬间，屏幕由漆黑亮起，灼目的莹蓝色仿佛深邃的夜空般，照亮了帕西没有表情的脸。界面在几秒钟之后显示出来，诺玛有各种界面，有的专业严谨，有的亲和力强，学生们即可以在ipad上安装插件后简单地拖拽来在晚间习题课上占座，让诺玛为他们安排夜宵，也可以使用超强的专业版，把无数的衔接集中在一个界面上以备查询。<br/>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;但很少人见过此刻出现在帕西面前的界面，没有苹果风格的简洁线框，没有logo，没有工具条，甚至连字体都是难看的默认字体。<br/>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;整个界面就是巨大的色块里的文字，点击文字进入下一层，“esc”回到上一层，简单的好像洗衣机的控制界面，或者80年代老电影里即将把007炸飞上天的炸囧弹倒计时器。<br/>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;但帕西知道这个界面的权限，无限的权限。<br/>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;这个见面所以那么简陋是因为会使用它的人很少很少，它根本不用考虑“人性化”这种事。开启这个界面的人必然是专业的来就是要获取纯粹的信息。</blockquote><div class='span'>————《龙族》</div>
+    </body>
+    </html>

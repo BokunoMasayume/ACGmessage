@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta  http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link REL="SHORTCUT ICON" HREF="/static/favicon.ico">
+    <title> 更新</title>
+    <style type="text/css">
+        a{
+            font-size:30px;
+            margin:10px;
+            color:#07519A;
+            text-decoration: none
+        }
+        a:hover{
+            color:purple;
+            background-color:#333 ;
+        }
+
+    .bar {
+        color:white;
+        font-size: 15px;
+        background-color: black;
+    }
+    #now,#now2{
+        color:purple;
+    }
+    </style>
+ </head>
+
+ <body>
+     <div class="bar">
+    <a href="/">首页</a>
+    <a href="/updata/anime/add/" >更新动画</a>
+    <a href="/updata/comic/add/" >更新漫画</a>
+    <a href="/updata/books/add/" id="now">更新轻小说</a>
+    </div>
+
+    <a href="/updata/books/add/">添加信息</a>
+    <a href="/updata/books/cha/">修改信息</a>
+    <a href="/updata/books/del/" id="now2">删除信息</a>
+    <br/>
+    <form method='post'>
+    <input type="text" name="search" value="作品名"/>
+    <button value="提交" type="submit">确定</button>
+    </form>
+    </body></html>

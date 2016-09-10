@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta  http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link REL="SHORTCUT ICON" HREF="/static/favicon.ico">
+    <title> 更新</title>
+    <style type="text/css">
+        a{
+            font-size:30px;
+            margin:10px;
+            color:#07519A;
+            text-decoration: none
+        }
+        a:hover{
+            color:purple;
+            background-color:#333 ;
+        }
+
+    .bar {
+        color:white;
+        font-size: 15px;
+        background-color: black;
+    }
+    #now,#now2{
+        color:purple;
+    }
+    </style>
+ </head>
+
+ <body>
+     <div class="bar">
+    <a href="/">首页</a>
+    <a href="/updata/anime/add/" id='now'>更新动画</a>
+    <a href="/updata/comic/add/">更新漫画</a>
+    <a href="/updata/books/add/">更新轻小说</a>
+    </div>
+
+
+    
+    <a href="/updata/anime/add/" id='now2'>添加信息</a>
+    <a href="/updata/anime/cha/">修改信息</a>
+    <a href="/updata/anime/del/">删除信息</a>
+   
+   
+ 
+    <form enctype="multipart/form-data" method="post">
+     {% csrf_token %}
+    {% if error%}<span style='color:red;'>*信息有缺省或剧名重复</span><br/>{%endif%}
+     <label for="name">剧名</label>
+     <input type="text" id="name" name="name" />
+     <br/>
+     <label for="company">制作公司</label>
+     <input type="text" id="company" name="company" />
+     <br/>
+     <label for="ountry">国家</label>
+     <input type="text" id="company" name="country"/>
+    
+     <br/>
+     <label >季节</label>
+    <label for="winter">冬季(一月)</label>
+    <input type="radio" id="winter" value="冬季(一月)"  name="season" />
+    <label for="spring">春季(四月)</label>
+    <input type="radio" id="spring" value="春季(四月)"  name="season" />
+    <label for="summer">夏季(七月)</label>
+    <input type="radio" id="summer" value="夏季(七月)"  name="season" />
+    <label for="autumn">秋季(十月)</label>
+    <input type="radio" id="autumn" value="秋季(十月)"  name="season" />
+    <br/>
+    <label for="key_word">关键词</label>
+    <input type="text" id="key_word" name="key_word"/>
+    <br/>
+     <label >类型</label>
+    <label for="1">原创</label>
+    <input type="radio" id="1" value="原创"  name="ori_type" />
+    <label for="2">漫改</label>
+    <input type="radio" id="2" value="漫改"  name="ori_type" />
+    <label for="3">小说改</label>
+    <input type="radio" id="3" value="小说改"  name="ori_type" />
+    <label for="4">游戏改</label>
+    <input type="radio" id="4" value="游戏改"  name="ori_type" />
+    <label for="5">动画衍生</label>
+    <input type="radio" id="5" value="动画衍生"  name="ori_type" />
+      
+    <br/>
+    年份 {{intform.year}}
+    <br/>
+    集数 {{intform.episode}}
+    <br/>
+    <label >状态</label>
+    <label for="y">已完结</label>
+    <input type="radio" id="y" value=1  name="state" />
+    <label for="n">连载中</label>
+    <input type="radio" id="n" value=0  name="state" />
+    <br/>
+    <label for='sum'>简介</label><br/>
+    <textarea id='sum' name='summary' rows="10" cols="50">在这里输入内容...</textarea>
+   <br/>
+   <label>图片</label>
+    <input type="file" name = "img">
+    <br/>
+    <button value="提交" type="submit">确定</button>
+    </form>
+    
+
+</body>
+</html>

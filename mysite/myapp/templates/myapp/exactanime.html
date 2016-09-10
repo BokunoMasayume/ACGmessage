@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta  http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link REL="SHORTCUT ICON" type="image/x-icon" HREF="/static/favicon.ico">
+<title>动画信息</title>
+  <style type="text/css">
+    .bar    a{
+            font-size:30px;
+            margin:10px;
+            color:#07519A;
+            text-decoration: none
+        }
+      .bar  a:hover{
+            color:purple;
+            background-color:#333 ;
+        }
+
+    .bar {
+        color:white;
+        font-size: 15px;
+        background-color: black;
+    }
+    #now{
+        color:purple;
+    }
+    .img{
+        
+        float:left;
+        width: 270px;
+        padding: 20px;
+    }
+    </style>
+ </head>
+
+ <body>
+     <div class="bar">
+    <a href="/">首页</a>
+    <a href="/anime/" id='now'>动画</a>
+    <a href="/comic/">漫画</a>
+    <a href="/book/">轻小说</a>
+    </div>
+    
+    <div class='img'>
+    <img src="/static/{{a.img.name}}" height='300' width='255' />
+   </div>
+    <div class='ul' style="height:300px;padding:30px;">
+    剧名：{{a.name}}<br/>
+    制作公司：{{a.company}}<br/>
+    国家：{{a.country}}<br/>
+    起始年份：{{a.year}}<br/>
+   季节：{{a.season}}新番<br/>
+    关键字：{{a.key_word}}<br/>
+    类型：{{a.ori_type}}<br/>
+   集数： {{a.episode}}<br/>
+    状态：{%if a.state%}已完结{%else%}连载中{%endif%}<br/>
+    </div>
+    
+     <div style="padding:20px;"><h3>简介:</h3>{{a.summary}}
+     </div>
+    </body>
+    </html>

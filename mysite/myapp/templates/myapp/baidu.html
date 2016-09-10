@@ -1,0 +1,125 @@
+<html><head>
+<meta  http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link REL="SHORTCUT ICON" type="image/x-icon" HREF="/static/favicon.ico">  
+
+
+    <title> ACG信息</title>
+    
+	<style type="text/css">
+		.head{
+            font-size:70px;
+            color:white;
+            background-color: black;   
+        }
+        .bar {
+            background-color: black;
+        }
+        a{
+            font-size:30px;
+            margin:10px;
+            color:#07519A;
+            text-decoration: none
+        }
+       
+        .zhu{
+        	 text-align:center;
+        	
+        }
+        .sss{
+            background:#3385ff;
+            border:2px solid #2d78f4;
+            letter-spacing:1px;
+            font-size:15px;
+            width:100px;
+            height:36px;
+            color:white;
+            margin:0;
+            position:relative;
+            right:4px;
+            border-radius:5px;
+        }
+        .kuang{
+            height:36px;
+            margin:0;
+            width:500px;
+            border-radius:5px;
+        }
+        .kuang:hover{border: 1px solid #999;}
+        a:hover{
+        	color:purple;
+            background-color:#333 ;
+        }
+        .bar .up{
+            color:white;
+            font-size: 15px;   
+        }
+        .out{
+            display:inline;
+        } 
+        .le {
+            position:absolute;
+            right:10px;
+            top:10px;
+            display:inline;
+            background-color: black;
+            color:white;
+        }
+       .le input{
+
+            background-color: black;
+            color:white;
+       }
+       .head input:hover{
+        color:red;
+       }
+       .head input{
+
+            background-color: black;
+            color:white;
+       }
+       .all{
+        height: 750px;
+       }
+	</style>
+    <script type="text/javascript">
+        {%if out%}
+        alert('你已登出')
+        {%endif%}
+    </script>
+</head>
+<body style=" background:url(/static/allen.jpg);" >
+<div class='all'>
+    <div class="bar">
+    <a href="/">首页</a>
+    <a href="/anime/">动画</a>
+    <a href="/comic/">漫画</a>
+    <a href="/book/">轻小说</a>
+    <a href="/updata/" class="up">更新 >></a>
+    <div class='le'><a href="/register/">
+    <input  type='submit' value='注册'></a>
+    <a href="/login/">
+     <input  type='submit' value='登录'></a>
+    <form  class='out' method='post'>
+    <input type='submit' value='登出'></form>
+    </div>
+    </div>
+    
+    <div class="head">
+        &nbspACG信息站
+        <a href='/comment/'>
+    <input type='submit' value='前往评论池~'></a>
+        <hr style="height:1mat0px;border:none;border-top:10px groove skyblue;"  />
+    </div>
+
+	
+
+    
+    <div class="zhu">
+    <form action="/search/" method="get">
+    <input class="kuang" type="text" name="sousuo"/>
+    <input class="sss" type="submit" value="搜索" />
+    </form>
+       </div>
+       
+  </div> 
+</body></html>

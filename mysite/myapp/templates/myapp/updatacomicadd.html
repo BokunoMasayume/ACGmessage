@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta  http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link REL="SHORTCUT ICON" HREF="/static/favicon.ico">
+    <title> 更新</title>
+    <style type="text/css">
+        a{
+            font-size:30px;
+            margin:10px;
+            color:#07519A;
+            text-decoration: none
+        }
+        a:hover{
+            color:purple;
+            background-color:#333 ;
+        }
+
+    .bar {
+        color:white;
+        font-size: 15px;
+        background-color: black;
+    }
+    #now,#now2{
+        color:purple;
+    }
+    </style>
+ </head>
+
+ <body>
+     <div class="bar">
+    <a href="/">首页</a>
+    <a href="/updata/anime/add/" >更新动画</a>
+    <a href="/updata/comic/add/" id='now'>更新漫画</a>
+    <a href="/updata/books/add/">更新轻小说</a>
+    </div>
+
+
+    
+    <a href="/updata/comic/add/" id='now2'>添加信息</a>
+    <a href="/updata/comic/cha/">修改信息</a>
+    <a href="/updata/comic/del/">删除信息</a>
+   
+   
+ 
+    <form enctype="multipart/form-data" method="post">
+     {% csrf_token %}
+        {% if error%}<span style='color:red;'>*信息有缺省或剧名重复</span><br/>{%endif%}
+     <label for="name">剧名</label>
+     <input type="text" id="name" name="name" />
+     <br/>
+      <label for="author">作者</label>
+     <input type="text" id="author" name="author" />
+     <br/>
+     <label for="company">连载杂志</label>
+     <input type="text" id="company" name="company" />
+     <br/>
+     <label for="ountry">国家</label>
+     <input type="text" id="company" name="country"/>
+    
+     <br/>
+  
+    <label for="key_word">关键词</label>
+    <input type="text" id="key_word" name="key_word"/>
+      
+    <br/>
+    年份 {{intform.year}}
+    <br/>
+    话数 {{intform.episode}}
+    <br/>
+    <label >状态</label>
+    <label for="y">已完结</label>
+    <input type="radio" id="y" value=1  name="state" />
+    <label for="n">连载中</label>
+    <input type="radio" id="n" value=0  name="state" />
+    <br/>
+    <label for='sum'>简介</label><br/>
+    <textarea id='sum' name='summary' rows="10" cols="50">在这里输入内容...</textarea>
+   <br/>
+   <label>图片</label>
+    <input type="file" name = "img">
+    <br/>
+    <button value="提交" type="submit">确定</button>
+    </form>
+    
+
+</body>
+</html>

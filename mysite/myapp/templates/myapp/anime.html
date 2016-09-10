@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta  http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link REL="SHORTCUT ICON" type="image/x-icon" HREF="/static/favicon.ico">
+<title>动画信息</title>
+  <style type="text/css">
+    .bar    a{
+            font-size:30px;
+            margin:10px;
+            color:#07519A;
+            text-decoration: none
+        }
+      .bar  a:hover{
+            color:purple;
+            background-color:#333 ;
+        }
+
+    .bar {
+        color:white;
+        font-size: 15px;
+        background-color: black;
+    }
+    #now{
+        color:purple;
+    }
+    .float{
+        float:left;
+        text-align: center;
+        height:200px;
+        width: 200px;
+        margin: 40px 10px;
+    }
+    </style>
+ </head>
+
+ <body>
+     <div class="bar">
+    <a href="/">首页</a>
+    <a href="/anime/" id='now'>动画</a>
+    <a href="/comic/">漫画</a>
+    <a href="/book/">轻小说</a>
+    </div>
+{% for i in list %}
+ <div class="float"> <a href="{{i.id}}/"> <img src="/static/{{i.img.name}}" height='200' width='170' />
+<br/>
+ {{i.name}}</a></div>
+{% endfor %}
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta  http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>动画信息</title>
+  <style type="text/css">
+   .bar a{
+            font-size:30px;
+            margin:10px;
+            color:#07519A;
+            text-decoration: none
+        }
+        .bar.a:hover{
+            color:purple;
+            background-color:#333 ;
+        }
+
+    .bar {
+        color:white;
+        font-size: 15px;
+        background-color: black;
+    }
+  </style>
+</head>
+<body>
+<div class="bar">
+    <a href="/">首页</a>
+    <a href="anime/" >动画</a>
+    <a href="/comic/" >漫画</a>
+    <a href="/book/" id='now'>轻小说</a>
+    </div>
+   <h3> 动画</h3>
+{% for a in list1 %}
+   <a href="/anime/{{a.id}}">{{a.name}}</a><br/>
+  
+{% endfor %}
+ <hr/>
+    <h3>漫画</h3>
+{% for a in list2 %}
+   <a href="/comic/{{a.id}}">{{a.name}}</a><br/>
+   
+{% endfor %}
+<hr/>
+   <h3>轻小说</h3>
+{% for a in list3 %}
+   <a href="/book/{{a.id}}">{{a.name}}</a><br/>
+{% endfor %}
+<hr/>
+
+</body>
+</html>

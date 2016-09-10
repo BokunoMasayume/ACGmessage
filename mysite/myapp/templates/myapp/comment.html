@@ -1,0 +1,91 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link REL="SHORTCUT ICON" type="image/x-icon" HREF="/static/favicon.ico">  
+ <title> 评论</title>
+ <script type="text/javascript">
+ {%if flag%}
+ alert('评论成功');
+ {%endif%}
+ </script>
+ <style type="text/css">
+      a{
+            font-size:30px;
+            margin:10px;
+            color:#07519A;
+            text-decoration: none
+        }
+        a:hover{
+            color:purple;
+            background-color:#333 ;
+        }
+
+    .bar {
+        color:white;
+        font-size: 15px;
+        background-color: black;
+    }
+ 	.com,.men{
+ 		width:80%;
+ 		margin:20px auto;
+ 	}
+ 	.com{
+ 		position:relative;
+ 	}
+ 	em{
+ 		position: absolute;
+ 		right:5px;
+ 	}
+ 	.sss{
+            background:#3385ff;
+            border:2px solid #2d78f4;
+            letter-spacing:1px;
+            font-size:15px;
+            width:100px;
+            height:120px;
+            color:white;
+            margin:0;
+            border-radius:5px;
+            position:relative;
+            bottom:47px;
+        }
+        .sss:hover{
+        	border: 3px solid #999;
+        }
+        textarea{
+        	border-radius:5px;
+        }
+        textarea:hover{border: 1px solid #999;}
+        span{
+        	color:red;
+        }
+ </style>
+    </head>
+ <body>
+ <div class="bar">
+    <a href="/">首页</a>
+    <a href="/anime/" >动画</a>
+    <a href="/comic/" >漫画</a>
+    <a href="/book/" id='now'>轻小说</a>
+    </div>
+ <div class='men'>
+ <form method='post'>
+ <textarea id='sum' name='summary' rows="5" cols=80%>在这里输入内容...</textarea>
+ 
+<input type='submit' class='sss' value='确定'/>
+<br/>{%if error_blank%}
+<span>*评论内容不可为空</span>
+{%endif%}
+ </form>
+ </div>
+ {% for i in list %}
+ <div class='com'><strong>{{i.person}}:</strong><br/>
+ {{i.comment}}<br/>
+<em> {{i.time}}</em><br/>
+ {% if not forloop.last%}
+ <hr/>
+ {%endif%}
+ </div>
+ {%endfor%}
+ 
+ </body></html>
